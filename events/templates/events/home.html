@@ -71,76 +71,45 @@
         <h1 class="fw-light">About me</h1>
         <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
         <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
+          <a href="mailto:avssasha@gmail.com" class="btn btn-primary my-2">Mail me!</a>
         </p>
       </div>
     </div>
   </section>
+<!-- 	  <img src="{{ event.event_image.url }}" class="d-block w-50" style="margin-left: 25%;" alt="..." /> -->
+<!-- <p class="card-text" style="color: white;">{{ event.event_text }}</p> -->
+	{% for event in events %}
 
-	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-	  <ol class="carousel-indicators">
-	    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-	    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-	    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
-	  </ol>
-	  <div class="carousel-inner">
-	    <div class="carousel-item active">
-			<div class="col">
-	          <div class="card shadow-sm" style="text-align: center; background-color: #1a1b1e">
-	            <img src="../../../media/event_images/girl.jpg" class="d-block w-50" style="margin-left: 25%;" alt="...">
+	<div class="album" style="padding-bottom: 1rem!important;">
+	    <div class="container">
+
+	      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="text-align: center;">
+	        <div class="col" style="margin-left: auto;margin-right: auto;">
+	          <div class="card shadow-sm bg-dark">
+	          	<img src="{{ event.event_image.url }}" class="card-img-top" alt="..." />
 	            <div class="card-body">
-	              <p class="card-text" style="color: white;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+	              <p class="card-text" style="color: white;">{{ event.event_text }}</p>
 	              <div class="d-flex justify-content-between align-items-center">
 	                <div class="btn-group">
 	                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
 	                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 	                </div>
-	                <small class="text-muted">9 mins</small>
+	                <small class="text-muted">{{ event.event_date }}</small>
 	              </div>
 	            </div>
 	          </div>
-	        </div>
-	    </div>
-	    <div class="carousel-item">
-	      <div class="col">
-	          <div class="card shadow-sm" style="text-align: center; background-color: #1a1b1e">
-	            <img src="../../../media/event_images/girl.jpg" class="d-block w-50" style="margin-left: 25%;" alt="...">
-	            <div class="card-body">
-	              <p class="card-text" style="color: white;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-	              <div class="d-flex justify-content-between align-items-center">
-	                <div class="btn-group">
-	                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-	                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-	                </div>
-	                <small class="text-muted">9 mins</small>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	    </div>
-	    <div class="carousel-item">
-	      <div class="col">
-	          <div class="card shadow-sm" style="text-align: center; background-color: #1a1b1e">
-	            <img src="../../../media/event_images/girl.jpg" class="d-block w-50" style="margin-left: 25%;" alt="...">
-	            <div class="card-body">
-	              <p class="card-text" style="color: white;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-	              <div class="d-flex justify-content-between align-items-center">
-	                <div class="btn-group">
-	                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-	                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-	                </div>
-	                <small class="text-muted">9 mins</small>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	    </div>
+	      </div>
 	  </div>
-	  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+	</div>
+</div>
+
+	  {% endfor %}
+
+	  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev" style="margin-bottom: 50px;">
 	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 	    <span class="visually-hidden">Previous</span>
 	  </a>
-	  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+	  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next" style="margin-bottom: 50px;">
 	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 	    <span class="visually-hidden">Next</span>
 	  </a>
