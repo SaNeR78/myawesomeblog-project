@@ -53,51 +53,41 @@
     		</button>
 		    <div class="flex-row-reverse collapse navbar-collapse" id="navbarNavAltMarkup">
 	      		<div class="navbar-nav">
-			        <a class="nav-link active" aria-current="page" href="#">About Me</a>
+			        <a class="nav-link" aria-current="page" href="#">About Me</a>
 			        <form>
 						<a class="nav-link" href="https://vk.com/resane78cu" target="_blank">VKontakte</a>
 					</form>
-			        <a class="nav-link" href="#">Blog</a>
+			        <a class="nav-link active" href="#">Blog</a>
 	      		</div>
 	    	</div>
 	  	</div>
 	</nav>
 
 <main>
-
-  <section class="py-5 pb-0 text-center container">
-    <div class="row py-lg-5 pb-0">
-      <div class="pb-0 col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">About me</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-        <p>
-          <a href="mailto:avssasha@gmail.com" class="btn btn-primary my-2">Mail me!</a>
-        </p>
-      </div>
-    </div>
-  </section>
 <!-- 	  <img src="{{ event.event_image.url }}" class="d-block w-50" style="margin-left: 25%;" alt="..." /> -->
 <!-- <p class="card-text" style="color: white;">{{ event.event_text }}</p> -->
-    <div class="row py-lg-5 text-center" style="padding-bottom: 30px;">
+
+	<div class="row py-lg-5 text-center" style="padding-bottom: 30px;">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Last three posts</h1>
+        <h1 class="fw-light">All posts</h1>
       </div>
     </div>
+    
 	{% for event in events %}
 
 	<div class="album" style="padding-bottom: 1rem!important;">
 	    <div class="container">
+
 	      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="text-align: center;">
 	        <div class="col" style="margin-left: auto;margin-right: auto;">
 	          <div class="card shadow-sm bg-dark">
-	          	<p class="card-text" style="color: white;margin-top: 10px;"><strong>{{ event.event_title }}</strong></p>
+              <p class="card-text" style="color: white;margin-top: 10px;"><strong>{{ event.event_title }}</strong></p>
 	          	<img src="{{ event.event_image.url }}" class="card-img-top" alt="..." />
 	            <div class="card-body">
 	              <p class="card-text" style="color: white;">{{ event.get_summary }}</p>
 	              <div class="d-flex justify-content-between align-items-center">
 	                <div class="btn-group">
 	                  <button type="button" class="btn btn-sm btn-outline-secondary">View photo</button>
-	                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
 	                </div>
 	                <small class="text-muted">{{ event.event_date }}</small>
 	              </div>
@@ -110,9 +100,6 @@
 
 	  {% endfor %}
 
-	    <p class="text-center">
-          <a href="#" class="btn btn-primary my-2">See more...</a>
-        </p>
 </main>
 
 <footer class="text-muted py-5">
