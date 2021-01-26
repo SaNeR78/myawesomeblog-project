@@ -47,15 +47,15 @@
     
 	<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
 	  <div class="container-fluid" style="text-align: center;">
-	    <a class="navbar-brand" href="#"><strong>#MyAwesomeBlog</strong></a>
+	    <a class="navbar-brand" href="{% url 'home' %}"><strong>#MyAwesomeBlog</strong></a>
 	        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       			<span class="navbar-toggler-icon"></span>
     		</button>
 		    <div class="flex-row-reverse collapse navbar-collapse" id="navbarNavAltMarkup">
 	      		<div class="navbar-nav">
-			        <a class="nav-link" aria-current="page" href="#">About Me</a>
+			        <a class="nav-link" aria-current="page" href="{% url 'home' %}">About Me</a>
 			        <form>
-						<a class="nav-link" href="https://vk.com/resane78cu" target="_blank">VKontakte</a>
+						<a class="nav-link" href="https://vk.com/resane78cu" target="_blank" rel="noopener noreferrer">VKontakte</a>
 					</form>
 			        <a class="nav-link active" href="#">Blog</a>
 	      		</div>
@@ -87,7 +87,10 @@
 	              <p class="card-text" style="color: white;">{{ event.get_summary }}</p>
 	              <div class="d-flex justify-content-between align-items-center">
 	                <div class="btn-group">
-	                  <button type="button" class="btn btn-sm btn-outline-secondary">View photo</button>
+<!--                     <form action="/<int:event_id>">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </form> -->
+                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'details' event.id %}">View</a>
 	                </div>
 	                <small class="text-muted">{{ event.event_date }}</small>
 	              </div>

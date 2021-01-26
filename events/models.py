@@ -15,3 +15,6 @@ class Event(models.Model):
 			text = self.event_text[:70] + '...'
 
 		return text
+
+	def __str__(self):
+		return self.event_title
