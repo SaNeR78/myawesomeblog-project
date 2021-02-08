@@ -43,7 +43,8 @@
 
     
   </head>
-  <body>
+  <body style="background-image:url(https://pub-static.fotor.com/static/web/site/features/backgrounds/images/Fotor-wall-background-image-6.jpg);
+  background-size: 100%;">
     
 	<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
 	  <div class="container-fluid" style="text-align: center;">
@@ -82,7 +83,9 @@
 	        <div class="col" style="margin-left: auto;margin-right: auto;">
 	          <div class="card shadow-sm bg-dark">
               <p class="card-text" style="color: white;margin-top: 10px;"><strong>{{ event.event_title }}</strong></p>
-	          	<img src="{{ event.event_image.url }}" class="card-img-top" alt="..." />
+              <a href="{% url 'details' event.id %}">
+                <img src="{{ event.event_image.url }}" class="card-img-top" alt="..." />
+              </a>
 	            <div class="card-body">
 	              <p class="card-text" style="color: white;">{{ event.get_summary }}</p>
 	              <div class="d-flex justify-content-between align-items-center">

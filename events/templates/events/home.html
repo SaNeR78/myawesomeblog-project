@@ -39,11 +39,13 @@
           font-size: 3.5rem;
         }
       }
+
     </style>
 
     
   </head>
-  <body>
+  <body style="background-image:url(https://pub-static.fotor.com/static/web/site/features/backgrounds/images/Fotor-wall-background-image-6.jpg);
+  background-size: 100%;">
     
 	<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
 	  <div class="container-fluid" style="text-align: center;">
@@ -69,7 +71,7 @@
     <div class="row py-lg-5 pb-0">
       <div class="pb-0 col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">About me</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        <p class="lead">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
         <p>
           <a href="mailto:avssasha@gmail.com" class="btn btn-primary my-2">Mail me!</a>
         </p>
@@ -92,7 +94,9 @@
 	        <div class="col" style="margin-left: auto;margin-right: auto;">
 	          <div class="card shadow-sm bg-dark">
 	          	<p class="card-text" style="color: white;margin-top: 10px;"><strong>{{ event.event_title }}</strong></p>
-	          	<img src="{{ event.event_image.url }}" class="card-img-top" alt="..." />
+	          	<a href="{% url 'details' event.id %}">
+                <img src="{{ event.event_image.url }}" class="card-img-top" alt="..." />
+              </a>
 	            <div class="card-body">
 	              <p class="card-text" style="color: white;">{{ event.get_summary }}</p>
 	              <div class="d-flex justify-content-between align-items-center">
